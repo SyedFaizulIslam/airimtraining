@@ -20,3 +20,4 @@ chromadb
 #torch
 pyjwt
 python-decouple
+pypdf

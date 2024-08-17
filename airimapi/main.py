@@ -1,5 +1,5 @@
 from contextlib import asynccontextmanager
-from langchain_openai import ChatOpenAI
+from langchain_openai import ChatOpenAI,OpenAIEmbeddings
 import uvicorn
 from fastapi import FastAPI,File,HTTPException,UploadFile,Depends
 import os
@@ -11,8 +11,9 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 @asynccontextmanager
 async def modelinitialize(app: FastAPI):
-    global model_llm
+    global model_llm,llm_embeddings
     model_llm=ChatOpenAI(model_name="gpt-4o",temperature=0,api_key=OPENAI_API_KEY)
+    llm_embeddings=OpenAIEmbeddings(api_key=OPENAI_API_KEY)
     yield
 
 app=FastAPI(lifespan=modelinitialize)
