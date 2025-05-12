@@ -21,3 +21,5 @@ chromadb
 pyjwt
 python-decouple
 pypdf
+sklearn
+joblib
