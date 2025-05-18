@@ -1,0 +1,402 @@
+[
+  {
+    "prompt": "Query: What is the recommended treatment for generalized anxiety disorder in an adult patient?",
+    "response": "Begin SSRI therapy such as sertraline. Offer cognitive behavioral therapy (CBT) sessions. Medications/Procedures: Sertraline (J3490), Psychotherapy (CPT 90834)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for migraine in an adult patient?",
+    "response": "Use NSAIDs for acute attacks. Preventive treatment may include beta-blockers like propranolol. Medications/Procedures: Ibuprofen (J1745), Neuro Exam (CPT 95970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for acute asthma in an adult patient?",
+    "response": "Administer short-acting beta-agonists via inhaler. Add oral corticosteroids if needed. Assess for allergic triggers. Medications/Procedures: Albuterol (J7609), Spirometry (CPT 94010)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for migraine in an adult patient?",
+    "response": "Use NSAIDs for acute attacks. Preventive treatment may include beta-blockers like propranolol. Medications/Procedures: Ibuprofen (J1745), Neuro Exam (CPT 95970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for acute asthma in an adult patient?",
+    "response": "Administer short-acting beta-agonists via inhaler. Add oral corticosteroids if needed. Assess for allergic triggers. Medications/Procedures: Albuterol (J7609), Spirometry (CPT 94010)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for hypertension in an adult patient?",
+    "response": "Start with low-dose thiazide diuretics. Lifestyle changes like salt restriction and regular exercise are essential. Monitor blood pressure weekly. Medications/Procedures: Hydrochlorothiazide (J3480), BP Monitoring (CPT 93784)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for acute asthma in an adult patient?",
+    "response": "Administer short-acting beta-agonists via inhaler. Add oral corticosteroids if needed. Assess for allergic triggers. Medications/Procedures: Albuterol (J7609), Spirometry (CPT 94010)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for hypertension in an adult patient?",
+    "response": "Start with low-dose thiazide diuretics. Lifestyle changes like salt restriction and regular exercise are essential. Monitor blood pressure weekly. Medications/Procedures: Hydrochlorothiazide (J3480), BP Monitoring (CPT 93784)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for acute asthma in an adult patient?",
+    "response": "Administer short-acting beta-agonists via inhaler. Add oral corticosteroids if needed. Assess for allergic triggers. Medications/Procedures: Albuterol (J7609), Spirometry (CPT 94010)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for generalized anxiety disorder in an adult patient?",
+    "response": "Begin SSRI therapy such as sertraline. Offer cognitive behavioral therapy (CBT) sessions. Medications/Procedures: Sertraline (J3490), Psychotherapy (CPT 90834)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for generalized anxiety disorder in an adult patient?",
+    "response": "Begin SSRI therapy such as sertraline. Offer cognitive behavioral therapy (CBT) sessions. Medications/Procedures: Sertraline (J3490), Psychotherapy (CPT 90834)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for migraine in an adult patient?",
+    "response": "Use NSAIDs for acute attacks. Preventive treatment may include beta-blockers like propranolol. Medications/Procedures: Ibuprofen (J1745), Neuro Exam (CPT 95970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for migraine in an adult patient?",
+    "response": "Use NSAIDs for acute attacks. Preventive treatment may include beta-blockers like propranolol. Medications/Procedures: Ibuprofen (J1745), Neuro Exam (CPT 95970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for generalized anxiety disorder in an adult patient?",
+    "response": "Begin SSRI therapy such as sertraline. Offer cognitive behavioral therapy (CBT) sessions. Medications/Procedures: Sertraline (J3490), Psychotherapy (CPT 90834)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for generalized anxiety disorder in an adult patient?",
+    "response": "Begin SSRI therapy such as sertraline. Offer cognitive behavioral therapy (CBT) sessions. Medications/Procedures: Sertraline (J3490), Psychotherapy (CPT 90834)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for acute asthma in an adult patient?",
+    "response": "Administer short-acting beta-agonists via inhaler. Add oral corticosteroids if needed. Assess for allergic triggers. Medications/Procedures: Albuterol (J7609), Spirometry (CPT 94010)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for generalized anxiety disorder in an adult patient?",
+    "response": "Begin SSRI therapy such as sertraline. Offer cognitive behavioral therapy (CBT) sessions. Medications/Procedures: Sertraline (J3490), Psychotherapy (CPT 90834)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for migraine in an adult patient?",
+    "response": "Use NSAIDs for acute attacks. Preventive treatment may include beta-blockers like propranolol. Medications/Procedures: Ibuprofen (J1745), Neuro Exam (CPT 95970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for acute asthma in an adult patient?",
+    "response": "Administer short-acting beta-agonists via inhaler. Add oral corticosteroids if needed. Assess for allergic triggers. Medications/Procedures: Albuterol (J7609), Spirometry (CPT 94010)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for hypertension in an adult patient?",
+    "response": "Start with low-dose thiazide diuretics. Lifestyle changes like salt restriction and regular exercise are essential. Monitor blood pressure weekly. Medications/Procedures: Hydrochlorothiazide (J3480), BP Monitoring (CPT 93784)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for acute asthma in an adult patient?",
+    "response": "Administer short-acting beta-agonists via inhaler. Add oral corticosteroids if needed. Assess for allergic triggers. Medications/Procedures: Albuterol (J7609), Spirometry (CPT 94010)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for migraine in an adult patient?",
+    "response": "Use NSAIDs for acute attacks. Preventive treatment may include beta-blockers like propranolol. Medications/Procedures: Ibuprofen (J1745), Neuro Exam (CPT 95970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for generalized anxiety disorder in an adult patient?",
+    "response": "Begin SSRI therapy such as sertraline. Offer cognitive behavioral therapy (CBT) sessions. Medications/Procedures: Sertraline (J3490), Psychotherapy (CPT 90834)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for acute asthma in an adult patient?",
+    "response": "Administer short-acting beta-agonists via inhaler. Add oral corticosteroids if needed. Assess for allergic triggers. Medications/Procedures: Albuterol (J7609), Spirometry (CPT 94010)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for hypertension in an adult patient?",
+    "response": "Start with low-dose thiazide diuretics. Lifestyle changes like salt restriction and regular exercise are essential. Monitor blood pressure weekly. Medications/Procedures: Hydrochlorothiazide (J3480), BP Monitoring (CPT 93784)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for community-acquired pneumonia in an adult patient?",
+    "response": "Prescribe empiric antibiotics such as azithromycin. Consider chest X-ray to assess severity. Medications/Procedures: Azithromycin (J0130), Chest X-ray (CPT 71046)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for generalized anxiety disorder in an adult patient?",
+    "response": "Begin SSRI therapy such as sertraline. Offer cognitive behavioral therapy (CBT) sessions. Medications/Procedures: Sertraline (J3490), Psychotherapy (CPT 90834)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for type 2 diabetes in an adult patient?",
+    "response": "Initiate Metformin therapy. Advise dietary changes and regular exercise. Monitor blood glucose levels and HbA1c. Medications/Procedures: Metformin (J8499), HbA1c Test (CPT 83036)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for hypertension in an adult patient?",
+    "response": "Start with low-dose thiazide diuretics. Lifestyle changes like salt restriction and regular exercise are essential. Monitor blood pressure weekly. Medications/Procedures: Hydrochlorothiazide (J3480), BP Monitoring (CPT 93784)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for hypertension in an adult patient?",
+    "response": "Start with low-dose thiazide diuretics. Lifestyle changes like salt restriction and regular exercise are essential. Monitor blood pressure weekly. Medications/Procedures: Hydrochlorothiazide (J3480), BP Monitoring (CPT 93784)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for migraine in an adult patient?",
+    "response": "Use NSAIDs for acute attacks. Preventive treatment may include beta-blockers like propranolol. Medications/Procedures: Ibuprofen (J1745), Neuro Exam (CPT 95970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for H. pylori infection in an adult patient?",
+    "response": "Triple therapy with omeprazole, clarithromycin, and amoxicillin for 14 days. Confirm with breath test. Medications/Procedures: Omeprazole (J3490), Breath Test (CPT 83013)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for iron deficiency anemia in an adult patient?",
+    "response": "Prescribe oral ferrous sulfate. Investigate gastrointestinal causes of bleeding. Medications/Procedures: Ferrous Sulfate (J3490), CBC (CPT 85027)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for deep vein thrombosis in an adult patient?",
+    "response": "Start anticoagulation with low molecular weight heparin. Confirm with Doppler ultrasound. Medications/Procedures: Enoxaparin (J1650), Doppler US (CPT 93970)"
+  },
+  {
+    "prompt": "Query: What is the recommended treatment for gout flare in an adult patient?",
+    "response": "Recommend NSAIDs like indomethacin. Colchicine may be considered. Encourage hydration and avoid purine-rich foods. Medications/Procedures: Colchicine (J1230), Uric Acid Test (CPT 84550)"
+  }
+]

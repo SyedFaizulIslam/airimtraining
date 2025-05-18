@@ -15,7 +15,6 @@ langchain-openai
 pymongo
 langchain_mongodb
 langchain_community
-chromadb
 #transformers
 #torch
 pyjwt
@@ -23,3 +22,12 @@ python-decouple
 pypdf
 sklearn
 joblib
+transformers
+torch
+accelerate
+bitsandbytes
+boto3
+PyPDF2
+python-multipart
+langchain-chroma
+langchain-aws
