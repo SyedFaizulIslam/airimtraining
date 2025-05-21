@@ -4,6 +4,7 @@ import time
 import signal
 import sys
 import requests
+from pathlib import Path
 import psutil  # Add this package to requirements-test.txt
 
 # Global variables
@@ -13,10 +14,49 @@ def before_all(context):
     # Start the server only once before all tests
     start_server(context)
     
+    # Create test files directory and sample PDF if needed
+    create_test_files(context)
+    
 def after_all(context):
     # Stop the server after all tests
     stop_server(context)
+
+def create_test_files(context):
+    # Create test files directory
+    test_files_dir = Path(__file__).parent / "test_files"
+    os.makedirs(test_files_dir, exist_ok=True)
     
+    # Create a sample PDF for testing if it doesn't exist
+    sample_pdf_path = test_files_dir / "sample.pdf"
+    
+    if not sample_pdf_path.exists():
+        try:
+            from reportlab.pdfgen import canvas
+            from reportlab.lib.pagesizes import letter
+            
+            print(f"Creating sample PDF at {sample_pdf_path}")
+            c = canvas.Canvas(str(sample_pdf_path), pagesize=letter)
+            c.drawString(100, 750, "This is a sample PDF document for testing.")
+            c.drawString(100, 730, "It contains various terms that can be searched.")
+            c.drawString(100, 710, "The main topic of this document is PDF API testing.")
+            c.drawString(100, 690, "This document contains important information about embeddings.")
+            c.drawString(100, 670, "The data can be processed and queried via the API.")
+            c.save()
+            print("Sample PDF created successfully.")
+        except ImportError:
+            print("Warning: ReportLab not installed. Unable to create sample PDF.")
+            print("Please install reportlab with: pip install reportlab")
+            
+            # Create a text file as fallback
+            with open(str(sample_pdf_path).replace('.pdf', '.txt'), 'w') as f:
+                f.write("This is a sample document for testing.\n")
+                f.write("It contains various terms that can be searched.\n")
+                f.write("The main topic of this document is PDF API testing.\n")
+                f.write("This document contains important information about embeddings.\n")
+                f.write("The data can be processed and queried via the API.\n")
+                
+            print("Created text file instead as fallback.")
+
 def start_server(context):
     global server_process
     

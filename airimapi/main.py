@@ -473,6 +473,405 @@ Given the context information and not prior knowledge, answer the question: {cha
             detail=f"Error querying documents: {str(e)}"
         )
 
+@app.post("/QnA_From_Llama")
+async def qna_from_llama(chatprompt: ChatPrompt):
+    """
+    QnA endpoint that uses Llama 3 70B on AWS Bedrock to answer questions
+    
+    Parameters:
+    - prompt: The question to ask the model
+    
+    Returns:
+    - A structured response with the question and answer from Llama 3
+    """
+    if not bedrock_runtime:
+        raise HTTPException(
+            status_code=503, 
+            detail="AWS Bedrock client not initialized. Check your AWS credentials and configuration."
+        )
+    
+    try:
+        # Format the prompt for better QnA structuring
+        formatted_prompt = f"""<system>
+You are a helpful AI assistant that provides informative, accurate, and helpful answers to user questions.
+Respond in a clear and concise manner, ensuring your answer addresses the specific question asked.
+</system>
+
+<user>
+{chatprompt.prompt}
+</user>
+
+<assistant>
+"""
+        
+        # Set up model parameters - similar to the CLI command
+        model_id = "arn:aws:bedrock:us-east-1:337608386354:inference-profile/us.meta.llama3-3-70b-instruct-v1:0"
+        
+        request_body = {
+            "prompt": formatted_prompt,
+            "max_gen_len": 512,
+            "temperature": 0.5,
+            "top_p": 0.9
+        }
+        
+        # Invoke the model using the API
+        response = bedrock_runtime.invoke_model(
+            modelId=model_id,
+            body=json.dumps(request_body),
+            accept="application/json",
+            contentType="application/json",
+            performanceConfigLatency="standard"
+        )
+        
+        # Process response
+        response_body = json.loads(response.get("body").read())
+        
+        # Extract the generated text
+        if "generation" in response_body:
+            answer = response_body["generation"]
+        else:
+            # Handle unexpected response format
+            answer = "Unable to parse model response: " + str(response_body)
+        
+        # Return structured response
+        return {
+            "question": chatprompt.prompt,
+            "answer": answer,
+            "model": "Llama 3 70B Instruct v1",
+            "metadata": {
+                "temperature": 0.5,
+                "top_p": 0.9,
+                "max_gen_len": 512
+            }
+        }
+        
+    except Exception as e:
+        # Provide detailed error information
+        error_message = str(e)
+        
+        # Check for specific AWS errors
+        if "ValidationException" in error_message:
+            detail = "Request format error: " + error_message
+        elif "AccessDeniedException" in error_message:
+            detail = "AWS Bedrock access denied. Check your credentials and permissions."
+        elif "ResourceNotFoundException" in error_message:
+            detail = "Model not found. Check the model ARN."
+        else:
+            detail = f"Error querying Llama model: {error_message}"
+            
+        raise HTTPException(
+            status_code=500,
+            detail=detail
+        )
+
+@app.post("/Demo_Pdf_embeddings")
+async def demo_pdf_embeddings(file: UploadFile = File(...)):
+    """
+    Demo endpoint to upload a PDF file, chunk it into 500-character pieces,
+    embed using Amazon Titan model, and store in Chroma DB
+    
+    Parameters:
+    - file: PDF file to upload and process
+    
+    Returns:
+    - Success message with filename and embedding details
+    """
+    if not bedrock_runtime or not bedrock_embeddings:
+        raise HTTPException(
+            status_code=503, 
+            detail="AWS Bedrock not initialized. Check your AWS credentials and configuration."
+        )
+    
+    try:
+        # Create a unique collection name based on timestamp
+        import datetime
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        collection_name = f"demo_pdf_{timestamp}"
+        
+        # 1. Save the uploaded file to a temporary location
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
+            temp_file.write(await file.read())
+            temp_file_path = temp_file.name
+        
+        # 2. Extract text from PDF
+        pdf_text = ""
+        file_size = os.path.getsize(temp_file_path)
+        pdf_page_count = 0
+        
+        try:
+            with open(temp_file_path, 'rb') as pdf_file:
+                pdf_reader = PyPDF2.PdfReader(pdf_file)
+                pdf_page_count = len(pdf_reader.pages)
+                for page_num in range(pdf_page_count):
+                    page = pdf_reader.pages[page_num]
+                    page_text = page.extract_text()
+                    if page_text:
+                        pdf_text += page_text + "\n\n"
+        finally:
+            # Clean up the temporary file
+            os.unlink(temp_file_path)
+        
+        if not pdf_text.strip():
+            raise HTTPException(status_code=400, detail="Could not extract text from PDF. The file might be empty or corrupted.")
+        
+        # 3. Create text chunks with specified size of 500 characters
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=500,
+            chunk_overlap=50,
+            length_function=len,
+            separators=["\n\n", "\n", " ", ""]
+        )
+        
+        chunks = text_splitter.split_text(pdf_text)
+        
+        # 4. Add metadata to each chunk
+        metadata = [
+            {
+                "filename": file.filename,
+                "file_size_bytes": file_size,
+                "file_size_kb": round(file_size / 1024, 2),
+                "page_count": pdf_page_count,
+                "chunk_index": i,
+                "total_chunks": len(chunks),
+                "embedding_model": "amazon.titan-embed-text-v2:0",
+                "created_at": timestamp
+            } for i in range(len(chunks))
+        ]
+        
+        # 5. Create Chroma collection and add documents with their embeddings
+        collection = Chroma.from_texts(
+            texts=chunks,
+            embedding=bedrock_embeddings,  # This uses the amazon.titan-embed-text-v2:0 model
+            metadatas=metadata,
+            collection_name=collection_name,
+            persist_directory=CHROMA_PERSIST_DIRECTORY
+        )
+        
+        # No need to call persist() as the from_texts() method with persist_directory already saves the data
+        
+        # 6. Return a detailed success message
+        return {
+            "status": "success",
+            "message": f"PDF '{file.filename}' has been successfully processed and embedded",
+            "details": {
+                "filename": file.filename,
+                "file_size_bytes": file_size,
+                "file_size_kb": round(file_size / 1024, 2),
+                "page_count": pdf_page_count,
+                "total_text_length": len(pdf_text),
+                "chunks_created": len(chunks),
+                "collection_name": collection_name,
+                "embedding_model": "amazon.titan-embed-text-v2:0",
+                "storage_location": CHROMA_PERSIST_DIRECTORY
+            }
+        }
+            
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error processing PDF for embedding: {str(e)}"
+        )
+
+@app.post("/demo_query_pdf")
+async def demo_query_pdf(
+    chatprompt: ChatPrompt, 
+    collection_name: Optional[str] = None, 
+    k: int = 5
+):
+    """
+    Query uploaded documents in Chroma DB and extract answers using Llama 3 70B model
+    
+    Parameters:
+    - prompt: Question to ask about the documents
+    - collection_name: Name of collection to query (if None, uses the most recent collection)
+    - k: Number of relevant chunks to retrieve
+    
+    Returns:
+    - Answer extracted from the embedded documents using Llama 3
+    """
+    if not bedrock_runtime or not bedrock_embeddings:
+        raise HTTPException(
+            status_code=503, 
+            detail="AWS Bedrock not initialized. Check your AWS credentials and configuration."
+        )
+    
+    try:
+        # If no collection specified, try to find the most recent demo collection
+        if not collection_name:
+            # Get list of existing Chroma collections
+            try:
+                # Approach 1: Try to get existing collections directly from Chroma
+                from chromadb import PersistentClient
+                chroma_client = PersistentClient(path=CHROMA_PERSIST_DIRECTORY)
+                all_collections = chroma_client.list_collections()
+                collections = [c.name for c in all_collections if c.name.startswith("demo_pdf_")]
+                
+                if not collections:
+                    # Approach 2: If no demo collections found above, try directory scanning
+                    collections_dir = os.path.join(CHROMA_PERSIST_DIRECTORY, "collections")
+                    if os.path.exists(collections_dir):
+                        collections = [d for d in os.listdir(collections_dir) if d.startswith("demo_pdf_")]
+            except Exception as e:
+                print(f"Error accessing collections: {e}")
+                # Try direct path approach as fallback
+                collections_dir = os.path.join(CHROMA_PERSIST_DIRECTORY, "collections")
+                if os.path.exists(collections_dir):
+                    collections = [d for d in os.listdir(collections_dir) if d.startswith("demo_pdf_")]
+                else:
+                    collections = []
+            
+            if not collections:
+                # Try other common locations where collections might be stored
+                possible_paths = [
+                    os.path.join(CHROMA_PERSIST_DIRECTORY),
+                    os.path.join(os.getcwd(), "chroma_db"),
+                    os.path.join(os.getcwd(), "chroma_db", "collections")
+                ]
+                
+                for path in possible_paths:
+                    if os.path.exists(path):
+                        print(f"Checking path: {path}")
+                        try:
+                            # Try to list any collection-like directories
+                            dirs = os.listdir(path)
+                            demo_collections = [d for d in dirs if d.startswith("demo_pdf_")]
+                            if demo_collections:
+                                collections = demo_collections
+                                print(f"Found collections in {path}: {collections}")
+                                break
+                        except:
+                            continue
+            
+            if not collections:
+                # Get all available collections as a fallback
+                try:
+                    # Use PersistentClient to list all collections
+                    from chromadb import PersistentClient
+                    client = PersistentClient(path=CHROMA_PERSIST_DIRECTORY)
+                    available_collections = client.list_collections()
+                    collection_names = [c.name for c in available_collections]
+                    
+                    if collection_names:
+                        # If we found any collections, use the first one
+                        collection_name = collection_names[0]
+                        print(f"Using fallback collection: {collection_name}")
+                    else:
+                        raise HTTPException(
+                            status_code=404,
+                            detail="No collections found in Chroma DB. Please upload a document first using Demo_Pdf_embeddings endpoint."
+                        )
+                except Exception as e:
+                    print(f"Error listing collections: {e}")
+                    raise HTTPException(
+                        status_code=404,
+                        detail="No document collections found. Please upload a document first using Demo_Pdf_embeddings endpoint."
+                    )
+            else:
+                # Sort by timestamp in the name to get the most recent one
+                collections.sort(reverse=True)
+                collection_name = collections[0]
+                print(f"Using collection: {collection_name}")
+            
+        # Load the specified Chroma collection
+        collection = Chroma(
+            collection_name=collection_name,
+            embedding_function=bedrock_embeddings,
+            persist_directory=CHROMA_PERSIST_DIRECTORY
+        )
+        
+        # Search for relevant document chunks
+        relevant_docs = collection.similarity_search(
+            query=chatprompt.prompt,
+            k=k
+        )
+        
+        if not relevant_docs:
+            return {
+                "question": chatprompt.prompt,
+                "answer": "No relevant documents found in the collection.",
+                "collection_name": collection_name
+            }
+        
+        # Compile document context
+        context = "\n\n".join([doc.page_content for doc in relevant_docs])
+        
+        # Collect source information
+        sources = []
+        for doc in relevant_docs:
+            if doc.metadata and "filename" in doc.metadata:
+                source = {
+                    "filename": doc.metadata.get("filename", "Unknown"),
+                    "chunk_index": doc.metadata.get("chunk_index", doc.metadata.get("chunk", "Unknown")),
+                    "page_count": doc.metadata.get("page_count", "Unknown")
+                }
+                sources.append(source)
+        
+        # Create prompt for Llama 3
+        formatted_prompt = f"""<system>
+You are a helpful AI assistant that answers questions based only on the provided document context.
+Your task is to extract answers directly from the documents without adding external information.
+If the answer cannot be found in the document context, simply state that the information is not 
+available in the provided documents.
+</system>
+
+<user>
+DOCUMENT CONTEXT:
+-----------------
+{context}
+-----------------
+
+QUESTION: {chatprompt.prompt}
+
+Answer the question based strictly on the information in the document context. Do not include any information from outside the context.
+</user>
+
+<assistant>
+"""
+        
+        # Set up Llama 3 model request
+        model_id = "arn:aws:bedrock:us-east-1:337608386354:inference-profile/us.meta.llama3-3-70b-instruct-v1:0"
+        
+        request_body = {
+            "prompt": formatted_prompt,
+            "max_gen_len": 512,
+            "temperature": 0.3,  # Lower temperature for more factual responses
+            "top_p": 0.9
+        }
+        
+        # Call Bedrock with Llama 3 70B model
+        response = bedrock_runtime.invoke_model(
+            modelId=model_id,
+            body=json.dumps(request_body),
+            accept="application/json",
+            contentType="application/json",
+            performanceConfigLatency="standard"
+        )
+        
+        # Parse response
+        response_body = json.loads(response.get("body").read())
+        
+        # Extract answer from response
+        if "generation" in response_body:
+            answer = response_body["generation"]
+        else:
+            answer = "Unable to parse model response: " + str(response_body)
+        
+        # Return structured response
+        return {
+            "question": chatprompt.prompt,
+            "answer": answer,
+            "sources": sources,
+            "collection_name": collection_name,
+            "model": "Llama 3 70B Instruct v1",
+            "chunks_retrieved": len(relevant_docs)
+        }
+    
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error querying PDF documents: {str(e)}"
+        )
+
 if __name__ == '__main__':
     #load_models()
     
